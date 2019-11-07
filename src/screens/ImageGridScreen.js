@@ -14,4 +14,8 @@ const ImageGridScreen = props => {
   );
 };
 
+ImageGridScreen.navigationOptions = {
+  headerTitle: 'All Products',
+};
+
 export default ImageGridScreen;

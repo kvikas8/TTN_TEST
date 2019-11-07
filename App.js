@@ -7,11 +7,10 @@
  */
 
 import React from 'react';
-import {View} from 'react-native';
 import {createStore, combineReducers} from 'redux';
 import {Provider} from 'react-redux';
 import productReducer from './src/store/reducers/products';
-import ImageGridScreen from './src/screens/ImageGridScreen';
+import AppNavigator from './src/navigation/AppNavigator';
 
 const rootReducer = combineReducers({
   products: productReducer,
@@ -22,9 +21,7 @@ const store = createStore(rootReducer);
 const App = () => {
   return (
     <Provider store={store}>
-      <View>
-        <ImageGridScreen />
-      </View>
+      <AppNavigator />
     </Provider>
   );
 };
