@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {FlatList, Button, Platform, View} from 'react-native';
+import {FlatList, Button, Platform, View, StyleSheet, Text} from 'react-native';
 import {useSelector, useDispatch} from 'react-redux';
 import ProductItem from '../components/ProductItem';
 import Colors from '../constants/Color';
@@ -42,6 +42,7 @@ const ImageGridScreen = props => {
         renderItem={itemData => (
           <ProductItem imageUrl={itemData.item.imageUrl} columns={columns} />
         )}
+        onEndReached={fetchProducts}
         numColumns={columns}
       />
       <AppPickerView
@@ -65,5 +66,9 @@ ImageGridScreen.navigationOptions = ({navigation}) => {
     ),
   };
 };
+
+const styles = StyleSheet.create({
+  centered: {flex: 1, justifyContent: 'center', alignItems: 'center'},
+});
 
 export default ImageGridScreen;
