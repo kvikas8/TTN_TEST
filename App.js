@@ -7,16 +7,17 @@
  */
 
 import React from 'react';
-import {createStore, combineReducers} from 'redux';
+import {createStore, combineReducers, applyMiddleware} from 'redux';
 import {Provider} from 'react-redux';
 import productReducer from './src/store/reducers/products';
 import AppNavigator from './src/navigation/AppNavigator';
+import thunk from 'redux-thunk';
 
 const rootReducer = combineReducers({
   products: productReducer,
 });
 
-const store = createStore(rootReducer);
+const store = createStore(rootReducer, applyMiddleware(thunk));
 
 const App = () => {
   return (

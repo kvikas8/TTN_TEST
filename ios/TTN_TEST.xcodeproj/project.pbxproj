@@ -18,6 +18,7 @@
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* TTN_TESTTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* TTN_TESTTests.m */; };
 		4A13BDA11C3D8AEBBE75E78D /* libPods-TTN_TEST-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B85C8C003B08273D7C1283C5 /* libPods-TTN_TEST-tvOS.a */; };
+		4E93DBD923772E9E00C07C24 /* ImageApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E93DBD823772E9E00C07C24 /* ImageApi.m */; };
 		4F49001C31FA370B4914E50E /* libPods-TTN_TESTTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F86C4A07850CAB562AA8A8F /* libPods-TTN_TESTTests.a */; };
 		8FDF3D5F5AE9011E9C662CAC /* libPods-TTN_TEST-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E40768AD7DDC3EC39E189F97 /* libPods-TTN_TEST-tvOSTests.a */; };
 /* End PBXBuildFile section */
@@ -56,6 +57,8 @@
 		2D02E47B1E0B4A5D006451C7 /* TTN_TEST-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TTN_TEST-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* TTN_TEST-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TTN_TEST-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A63A0615124833127A5DCE2 /* Pods-TTN_TESTTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTN_TESTTests.debug.xcconfig"; path = "Target Support Files/Pods-TTN_TESTTests/Pods-TTN_TESTTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4E93DBD723772E9E00C07C24 /* ImageApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageApi.h; sourceTree = "<group>"; };
+		4E93DBD823772E9E00C07C24 /* ImageApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageApi.m; sourceTree = "<group>"; };
 		7BA77663509A0C9F60C7741E /* Pods-TTN_TEST-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTN_TEST-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-TTN_TEST-tvOSTests/Pods-TTN_TEST-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		8F86C4A07850CAB562AA8A8F /* libPods-TTN_TESTTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TTN_TESTTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC2EAAAEFE474CAED08B83A2 /* Pods-TTN_TEST-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTN_TEST-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-TTN_TEST-tvOSTests/Pods-TTN_TEST-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -128,6 +131,8 @@
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
+				4E93DBD723772E9E00C07C24 /* ImageApi.h */,
+				4E93DBD823772E9E00C07C24 /* ImageApi.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
@@ -194,7 +199,6 @@
 				4A63A0615124833127A5DCE2 /* Pods-TTN_TESTTests.debug.xcconfig */,
 				03444C9509E129055FA3FDC0 /* Pods-TTN_TESTTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -308,6 +312,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -528,6 +533,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E93DBD923772E9E00C07C24 /* ImageApi.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
