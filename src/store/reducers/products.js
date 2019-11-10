@@ -11,7 +11,7 @@ export default (state = initialState, action) => {
   let allProducts = [];
   if (state.allProducts.length > 0) {
     newProducts = action.products;
-    allProducts = [...state.allProducts, ...newProducts];//[...state.allProducts, newProducts];
+    allProducts = [...state.allProducts, ...newProducts];
   } else {
     newProducts = [];
     allProducts = action.products;

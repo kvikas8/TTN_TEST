@@ -13,7 +13,6 @@ import {useSelector, useDispatch} from 'react-redux';
 import ProductItem from '../components/ProductItem';
 import Colors from '../constants/Color';
 import AppPickerView from '../components/AppPickerView';
-//import { useSelector, useDispatch } from 'react-redux';
 import * as productsActions from '../store/action/products';
 
 const ImageGridScreen = props => {
@@ -22,7 +21,6 @@ const ImageGridScreen = props => {
   const [isLoading, setIsLoading] = useState(false);
   const products = useSelector(state => state.products.allProducts);
   const dispatch = useDispatch();
-  //props.navigation.setParams({togglePicker: _togglePicker});
 
   useEffect(() => {
     // dispatch(productsActions.fetchProducts());
@@ -69,7 +67,7 @@ const ImageGridScreen = props => {
   if (!isLoading && products.length === 0) {
     return (
       <View style={styles.centered}>
-        <Text>No products found. Or Some error occurred while getting them!! </Text>
+        <Text>No products found or an error occurred while getting them!! </Text>
       </View>
     );
   }
