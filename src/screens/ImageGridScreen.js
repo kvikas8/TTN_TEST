@@ -7,6 +7,7 @@ import {
   StyleSheet,
   Text,
   ActivityIndicator,
+  Alert,
 } from 'react-native';
 import {useSelector, useDispatch} from 'react-redux';
 import ProductItem from '../components/ProductItem';
@@ -34,7 +35,11 @@ const ImageGridScreen = props => {
     if (initial) {
       setIsLoading(true);
     }
-    await dispatch(productsActions.fetchProducts());
+    try {
+      await dispatch(productsActions.fetchProducts());
+    } catch (err) {
+      Alert.alert(err.message);
+    }
     if (initial) {
       setIsLoading(false);
     }
@@ -53,7 +58,6 @@ const ImageGridScreen = props => {
     _togglePicker();
   };
 
-
   if (isLoading) {
     return (
       <View style={styles.centered}>
@@ -65,7 +69,7 @@ const ImageGridScreen = props => {
   if (!isLoading && products.length === 0) {
     return (
       <View style={styles.centered}>
-        <Text>No products found.</Text>
+        <Text>No products found. Or Some error occurred while getting them!! </Text>
       </View>
     );
   }

@@ -4,11 +4,15 @@ import {NativeModules} from 'react-native';
 
 export const fetchProducts = () => {
   return async dispatch => {
-    let imageApi = NativeModules.ImageApi;
-    const productsJsonStr = await imageApi.fetchProducts();
-    const resData = JSON.parse(productsJsonStr);
-    let loadedProducts = [];
-    loadedProducts = resData.map(jsonObj => new Product(jsonObj));
-    dispatch({type: SET_PRODUCTS, products: loadedProducts});
+    try {
+      let imageApi = NativeModules.ImageApi;
+      const productsJsonStr = await imageApi.fetchProducts();
+      const resData = JSON.parse(productsJsonStr);
+      let loadedProducts = [];
+      loadedProducts = resData.map(jsonObj => new Product(jsonObj));
+      dispatch({type: SET_PRODUCTS, products: loadedProducts});
+    } catch (err) {
+      throw err;
+    }
   };
 };

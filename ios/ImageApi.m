@@ -17,7 +17,7 @@ RCT_REMAP_METHOD(fetchProducts,
   
    NSMutableURLRequest *urlRequest = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"https://5dbfc096e295da001400b90d.mockapi.io/codingChallenge/v1/images"]];
    [urlRequest setHTTPMethod:@"GET"];
-  // [urlRequest setCachePolicy: NSURLRequestReturnCacheDataElseLoad];
+   [urlRequest setCachePolicy: NSURLRequestReturnCacheDataElseLoad];
    NSURLSession *session = [NSURLSession sharedSession];
    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:urlRequest completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
                                      {
