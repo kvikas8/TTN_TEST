@@ -1,4 +1,4 @@
-import Product from '../../models/Product';
+import Product from '../../models/product';
 export const SET_PRODUCTS = 'SET_PRODUCTS';
 import {NativeModules} from 'react-native';
 

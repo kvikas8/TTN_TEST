@@ -1,4 +1,4 @@
-import Product from '../models/Product';
+import Product from '../models/product';
 const productJson = [
   {
     id: 'PRODUCT_ID_1',
