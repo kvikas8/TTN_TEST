@@ -1,5 +1,13 @@
 import React, {useState, useEffect} from 'react';
-import {FlatList, Button, Platform, View, StyleSheet, Text} from 'react-native';
+import {
+  FlatList,
+  Button,
+  Platform,
+  View,
+  StyleSheet,
+  Text,
+  ActivityIndicator,
+} from 'react-native';
 import {useSelector, useDispatch} from 'react-redux';
 import ProductItem from '../components/ProductItem';
 import Colors from '../constants/Color';
@@ -10,20 +18,32 @@ import * as productsActions from '../store/action/products';
 const ImageGridScreen = props => {
   const [columns, setColumns] = useState(3);
   const [pickerDisplayed, setPickerDisplayed] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const products = useSelector(state => state.products.allProducts);
   const dispatch = useDispatch();
   //props.navigation.setParams({togglePicker: _togglePicker});
 
   useEffect(() => {
     // dispatch(productsActions.fetchProducts());
-    fetchProducts();
+    fetchProducts(true);
     props.navigation.setParams({togglePicker: _togglePicker});
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [dispatch]);
+  }, []);
 
-  const fetchProducts = () => {
-    dispatch(productsActions.fetchProducts());
+  const fetchProducts = async (initial = false) => {
+    if (initial) {
+      setIsLoading(true);
+    }
+    await dispatch(productsActions.fetchProducts());
+    if (initial) {
+      setIsLoading(false);
+    }
   };
+
+  const loadMore = () => {
+    fetchProducts(false);
+  };
+
   const _togglePicker = () => {
     setPickerDisplayed(!pickerDisplayed);
   };
@@ -32,6 +52,23 @@ const ImageGridScreen = props => {
     setColumns(newValue);
     _togglePicker();
   };
+
+
+  if (isLoading) {
+    return (
+      <View style={styles.centered}>
+        <ActivityIndicator size="large" color={Colors.primary} />
+      </View>
+    );
+  }
+
+  if (!isLoading && products.length === 0) {
+    return (
+      <View style={styles.centered}>
+        <Text>No products found.</Text>
+      </View>
+    );
+  }
 
   return (
     <View>
@@ -42,7 +79,7 @@ const ImageGridScreen = props => {
         renderItem={itemData => (
           <ProductItem imageUrl={itemData.item.imageUrl} columns={columns} />
         )}
-        onEndReached={fetchProducts}
+        onEndReached={loadMore}
         numColumns={columns}
       />
       <AppPickerView
