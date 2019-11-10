@@ -4,9 +4,12 @@ TTN_TEST is a Mobile Coding Challenge to build a listing page for image items.
 
 ## Installation
 
-Alfter cloning repo just use the react-native cli to run the app.
+After cloning repo and installing dependencies just use the react-native cli to run the app.
 
 ```bash
+git clone https://github.com/kvikas8/TTN_TEST.git
+cd TTN_TEST
+npm install
 react-native run-ios 
 ```
 
